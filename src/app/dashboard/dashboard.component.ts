@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
 
   }
   ngOnInit(){
+    // 
     //  this.jobList = [
     //    {
     //      title : "Exercise Regularly",
