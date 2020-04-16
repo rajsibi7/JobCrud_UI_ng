@@ -1,0 +1,34 @@
+<div class="container containerStyle">
+  <div class="row">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-info float-right" [routerLink]="'/dashboard'">Dashboard</button>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h4><span class="badge badge-secondary">{{addAction ? 'Create' : 'Update'}} job</span></h4>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6 card">
+      <div class="card-body">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" required name="title" maxlength="20" ngModel  placeholder="Job Title">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" name="description" required ngModel  maxlength="50" rows="3"></textarea>
+          </div>
+          <button type="submit" [disabled]="!f.valid" class="btn btn-primary">Submit</button>
+          <button type="button" [routerLink]="'/dashboard'" style="margin-left: 15px;" class="btn btn-secondary">Cancel</button>
+        </form>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+<!-- required name="title" #first="ngModel" -->
+<!-- name="description" ngModel -->

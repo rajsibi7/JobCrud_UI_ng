@@ -1,0 +1,27 @@
+<div class="container containerStyle">
+  <div class="row">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-success float-right" [routerLink]="'/createjob'">Create Job</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h1><span class="badge badge-secondary">Job list</span></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 j_list" *ngFor="let job of jobList" >
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{job.title}}</h5>
+          <p class="card-text descStyle" title="{{job.description}}">{{job.description}}</p>
+            <button type="button" class="btn btn-primary" [routerLink]="['/createjob/',job._id]">Edit</button>
+          <button type="button" class="btn btn-danger float-right" (click)="deleteJob(job._id)">Delete</button>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+<!---->
+
